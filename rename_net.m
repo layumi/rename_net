@@ -15,5 +15,10 @@ end
 for i=1:numel(net.vars)
     net.vars(i).name = strcat('l',net.vars(i).name);
 end
+
+for i=1:numel(net.params)
+    net.params(i).name = strcat('l',net.params(i).name);
+end
+
 netStruct = net.saveobj() ;
-save('vgg16_copy.mat', '-struct', 'netStruct') ;
+save('../vgg16_copy.mat', '-struct', 'netStruct') ;
